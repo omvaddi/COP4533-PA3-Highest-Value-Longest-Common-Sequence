@@ -24,16 +24,28 @@ def find_highest_value_subsequence(char_vals, a, b):
                 dp[i][j] = dp[i - 1][j - 1] + char_vals[a[i - 1]]
             else: 
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-                
+
+    sol = []
+    i, j = n, m
+    while i > 0 and j > 0:
+        if a[i - 1] == b[j - 1]:
+            sol.append(a[i - 1])
+            i -= 1
+            j -= 1
+        elif dp[i - 1][j] >= dp[i][j - 1]:
+            i -= 1
+        else:
+            j -= 1
     
+    return dp[n][m], ''.join(reversed(sol))
 
 
 
 def main():
     char_vals, a, b = read_file('tests/test1.txt')
-    print(char_vals)
-    print(a)
-    print(b)
+    value, subsequence = find_highest_value_subsequence(char_vals, a, b)
+    print(f'Highest value: {value}')
+    print(f'Longest common subsequence: {subsequence}')
 
 if __name__ == '__main__':
     main()
