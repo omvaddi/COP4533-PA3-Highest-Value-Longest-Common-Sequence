@@ -42,10 +42,11 @@ def find_highest_value_subsequence(char_vals, a, b):
 
 
 def main():
-    char_vals, a, b = read_file('tests/test1.txt')
+    file_name = input('Enter the file name: ')
+    char_vals, a, b = read_file(file_name)
     value, subsequence = find_highest_value_subsequence(char_vals, a, b)
-    print(f'Highest value: {value}')
-    print(f'Longest common subsequence: {subsequence}')
+    print(value)
+    print(subsequence)
 
 if __name__ == '__main__':
     main()
