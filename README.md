@@ -29,8 +29,8 @@ Assumptions:
 - To run graph.py, in the terminal run "python src/graph.py". Note that you may need to run "pip install matplotlib" if it doesn't work.
 
 Question 1: Empirical Comparison 
-<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/fe4b6e46-4a77-4348-8624-4f9ff33d9de5" />
-
+<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/fe4b6e46-4a77-4348-8624-4f9ff33d9de5" />  
+  
 Question 2: Recurrence Equation   
 Let the two strings be:   
 A = a1a2...a_n,   B = b1b2...b_m   
