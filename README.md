@@ -51,7 +51,11 @@ Question 3: Big-Oh
 ```
 Let n, m equal the length of strings A and B, respectively, with v(c) representing the value of the character   
 Initialize dp[n][m]   
-      
+for i = 0 to n:  
+      dp[i][0] = 0  
+for j = 0 to m:  
+      dp[0][j] = 0  
+  
 For i = 1 to n:  
     For j = 1 to m:  
         If A[i - 1] == B[j - 1]:   
