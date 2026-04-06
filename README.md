@@ -47,26 +47,28 @@ The equation considers all possibilites for either including or skipping each ch
 from smaller subproblems.  
 
 Question 3: Big-Oh   
+```
 Let n, m equal the length of strings A and B, respectively, with v(c) representing the value of the character   
 Initialize dp[n][m]   
       
 For i = 1 to n:  
-``For j = 1 to m:  
-````If A[i - 1] == B[j - 1]:   
-``````dp[i][j] = dp[i-1][j-1] + v(A[i])  
-````Else:  
-``````dp[i][j] = max(dp[i-1][j], dp[i][j-1])  
+    For j = 1 to m:  
+        If A[i - 1] == B[j - 1]:   
+            dp[i][j] = dp[i-1][j-1] + v(A[i])  
+        Else:  
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1])  
 Initialize i = n, j = m, length = 0  
 While i > 0 and j > 0:  
-``If A[i - 1] == B[j - 1]:  
-````length++   
-````i--  
-````j--  
-``Else if dp[i-1][j] >= dp[i][j-1]:  
-````i--   
-``Else:  
-````j--  
+    If A[i - 1] == B[j - 1]:  
+        length++   
+        i--  
+        j--  
+    Else if dp[i-1][j] >= dp[i][j-1]:  
+        i--   
+    Else:  
+        j--  
           
 return length  
+```
 
 The runtime of this algorithm is O(n * m), as it takes n * m time to solve the original problem and n + m time to backtrack to find the length of the subsequence.
